@@ -8,7 +8,7 @@ merc = Projection('+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=
 mapfile = 'mapnik_style.xml'
 map_output = 'canberra.png'
 
-m = Map(4*1024,4*1024,"+proj=latlong +datum=WGS84")
+m = Map(4*1024,4*1024)
 load_map(m, mapfile)
 # lon, lat , lon , lat
 

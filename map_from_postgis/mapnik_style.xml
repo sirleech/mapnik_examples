@@ -22,13 +22,13 @@
 	<Layer name="highways" status="on" srs="+proj=latlong +datum=WGS84">
 		<StyleName>highways</StyleName>
 		<Datasource>
-		<Parameter name="type">postgis</Parameter>
-		<Parameter name="host">localhost</Parameter>
-		<Parameter name="dbname">test_gis</Parameter>
-		<Parameter name="user">chris</Parameter>      
-		<Parameter name="password">ae1cam</Parameter>
-		<Parameter name="table">(select * from planet_osm_roads order by z_order) as roads</Parameter>
-		<Parameter name="estimate_extent">true</Parameter>
-	      </Datasource>
+			<Parameter name="type">postgis</Parameter>
+			<Parameter name="host">localhost</Parameter>
+			<Parameter name="dbname">test_gis</Parameter>
+			<Parameter name="user">chris</Parameter>      
+			<Parameter name="password">ae1cam</Parameter>
+			<Parameter name="table">(select * from planet_osm_roads order by z_order) as roads</Parameter>
+			<Parameter name="estimate_extent">true</Parameter>
+		</Datasource>
 	</Layer>
 </Map>
