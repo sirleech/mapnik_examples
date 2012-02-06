@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Map bgcolor="#f2efe9" srs="+proj=latlong +datum=WGS84">
+	<FontSet name="book-fonts">
+		<Font face_name="DejaVu Sans Book" />
+	</FontSet>
+	<Style name="roads">
+		<Rule>
+			<Filter>[highway] &lt;&gt; ''</Filter>
+			<LineSymbolizer>
+				<CssParameter name="stroke">#808080</CssParameter>
+				<CssParameter name="stroke-width">2</CssParameter>
+				<CssParameter name="stroke-linejoin">round</CssParameter>
+				<CssParameter name="stroke-linecap">round</CssParameter>
+			</LineSymbolizer>
+		</Rule>
+		<Rule>
+			<Filter>[highway] &lt;&gt; ''</Filter>
+			<TextSymbolizer name="name" fontset_name="book-fonts"
+				size="9" fill="#000" halo_radius="1" placement="line" />
+		</Rule>
+	</Style>
+	<Layer name="roads" status="on" srs="+proj=latlong +datum=WGS84">
+		<StyleName>roads</StyleName>
+		<Datasource>
+		<Parameter name="type">postgis</Parameter>
+		<Parameter name="host">localhost</Parameter>
+		<Parameter name="dbname">test_gis</Parameter>
+		<Parameter name="user">chris</Parameter>      
+		<Parameter name="password">ae1cam</Parameter>
+		<Parameter name="table">(select * from planet_osm_roads order by z_order) as roads</Parameter>
+		<Parameter name="estimate_extent">true</Parameter>
+	      </Datasource>
+	</Layer>
+</Map>
